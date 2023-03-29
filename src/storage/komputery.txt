@@ -1,0 +1,6 @@
+Asus,Intel Pentium 4, nVidia Geforce 1080Ti SLI, Samsung EVO 7, 3500PLN
+Asus,Intel Pentium 3, nVidia Geforce 1080Ti SLI, Kingston 200, 7400PLN
+MSI,Intel Pentium 4, nVidia Geforce 1080Ti SLI, WD Caviar, 3500PLN
+Asus,Intel Pentium, AMD Radeon 3400, Samsung EVO 7, 3458PLN
+GigaByte,AMD Athlon, nVidia Geforce 1080Ti SLI, Samsung EVO 7, 2300PLN
+Asus,AMD Ryzer, nVidia Geforce 1080Ti SLI, Samsung SDD, 7800PLN
