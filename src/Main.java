@@ -2,7 +2,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
-public class   Main {
+public class Main {
     public static void main(String[] args) {
 
         CustomFileProvider customFileProvider = new CustomFileProvider("C:\\Mike\\ExceptionLearn\\src\\storage\\");
@@ -23,7 +23,10 @@ public class   Main {
 //        for(Computer c: customFileProvider.readStorage("komputery.txt")){
 //            System.out.println(c);
 //        }
-        customFileProvider.countWordInFile("pantadeusz.txt", "dom");
+//        customFileProvider.countWordInFile("pantadeusz.txt", "dom");
+//        customFileProvider.getDataFormUrl("https://","wp.pl", "minister");
+        customFileProvider.getDataFormUrl("https://","tvn24.pl", "pis");
+
     }
 }
 

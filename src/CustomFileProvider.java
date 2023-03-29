@@ -1,4 +1,6 @@
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
@@ -50,7 +52,6 @@ public class CustomFileProvider {
         try {
             if (Files.notExists(path)) Files.createFile(path);
             Files.write(path, list, StandardCharsets.UTF_8, openOption);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -160,6 +161,33 @@ public class CustomFileProvider {
                 }
             }
             System.out.println("Znalazłem szukanych słow w ilości: " + wordCounter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void getDataFormUrl(String protocol, String page, String pattern){
+        try {
+            URL url = new URL(protocol+page);
+            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line;
+            File file = new File(path + page.replace(".","").replace("www","")+".txt");
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            int lineCounter=0, wordCounter=0;
+            while ((line = br.readLine()) != null) {
+                lineCounter++;
+                bw.write(line);
+                bw.newLine();
+                String[] words = line.split(" ");
+                for (String w : words) {
+                    if (w.replace(",","").replace(".","").equalsIgnoreCase(pattern)) {
+                        wordCounter++;
+                        //System.out.println("Znalazłem szukane słowo w lini: " + lineCounter + " | " + line);
+                    }
+                }
+            }
+            System.out.println("Znalazłem szukanych słow w ilości: " + wordCounter);
+            bw.close();
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
